@@ -51,7 +51,7 @@ flask_jwt_trivial.init_app(
 )
 
 @app.route("/private")
-@flask_jwt_trivial.jwt_required
+@flask_jwt_trivial.jwt_required() # Note, closing () are required.
 def private():
     return "Your token worked."
 
